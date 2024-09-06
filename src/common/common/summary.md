@@ -1,0 +1,8 @@
+* [Animation](common/animation.md)
+* [Localization](common/localization.md)
+* [Internationalization](common/internationalization.md)
+* [Drag and Drop](common/drag-and-drop.md)
+* [Update NPM Packages](common/how-to/update-npm-package.md)
+* [Resolve Syncfusion React UI Components' Template issues](common/how-to/resolve-react-template-issues.md)
+* [Resolve delay rendering of Syncfusion React UI Components](common/how-to/resolve-react-component-rendering-delay.md)
+* [Change the font-family of Syncfusion EJ2 React UI Components](common/how-to/changing-font.md)

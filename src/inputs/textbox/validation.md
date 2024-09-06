@@ -1,0 +1,61 @@
+---
+title: "Validation"
+component: "Textbox"
+description: "Covers how to apply different validation styles to the text box (input) control such as error, warning, and success with a ripple effect."
+---
+
+# Validation
+
+The TextBox supports three types of validation styles namely `error`, `warning`, and `success`. These states are
+enabled by adding corresponding classes `.e-error`, `.e-warning`, or `.e-success` to the input parent element.
+
+{% tab template="textbox/default", sourceFiles="app/**/index.tsx" %}
+
+```typescript
+
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+
+export default class Default extends React.Component {
+
+public render() {
+   return (
+    <div>
+        <div className="e-input-group e-warning">
+        <input className="e-input" type="text" placeholder="Input with warning" onFocus = {this.onInputFocus} onBlur = {this.onInputBlur} />
+        </div>
+
+        <div className="e-input-group e-error">
+        <input className="e-input" type="text" placeholder="Input with error" onFocus = {this.onInputFocus} onBlur = {this.onInputBlur} />
+        </div>
+
+        <div className="e-input-group e-success">
+        <input className="e-input" type="text" placeholder="Input with success" onFocus = {this.onInputFocus} onBlur = {this.onInputBlur}/>
+        </div>
+    </div>
+);
+}
+
+
+public onInputFocus(args: React.FocusEvent) {
+    if (!((args.target as HTMLElement).parentElement as HTMLElement).classList.contains('e-input-in-wrap')) {
+        ((args.target as HTMLElement).parentElement as HTMLElement).classList.add('e-input-focus');
+    } else {
+        (((args.target as HTMLElement).parentElement as HTMLElement).parentElement as HTMLElement).classList.add('e-input-focus')
+    }
+}
+
+public onInputBlur(args: React.FocusEvent) {
+    if (!((args.target as HTMLElement).parentElement as HTMLElement).classList.contains('e-input-in-wrap')) {
+        ((args.target as HTMLElement).parentElement as HTMLElement).classList.remove('e-input-focus');
+    } else {
+        (((args.target as HTMLElement).parentElement as HTMLElement).parentElement as HTMLElement).classList.remove('e-input-focus');
+    }
+}
+}
+
+ReactDOM.render(<Default />, document.getElementById('input-container'));
+
+```
+
+{% endtab %}
